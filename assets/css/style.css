@@ -27,6 +27,8 @@ h1 span {
 /* Settings Area*/
 
 #settings-box {
+    display: flex;
+    justify-content: center;
     width: 90%;
     margin-left: 5%;
     background-color: rgb(65, 100, 91);
@@ -37,12 +39,27 @@ h1 span {
 }
 
 .setting-select {
+    position: relative;
+    left: -10%;
     margin: 3%;
     min-height: 30px;
     height: 6vw;
     min-width: fit-content;
     width: 6vw;
     border-radius: 8px;
+}
+
+#setting-dice-container {
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+    padding-left: 30px;
+    color: azure;
+    font-size: x-large;
+}
+
+#setting-dice-container span {
+    padding-right: 5vw;
 }
 
 /* Simulation Area */

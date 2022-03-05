@@ -1,0 +1,48 @@
+body {
+    background-color: rgb(199, 223, 213);
+    margin: 0 auto;
+}
+/* Header */
+header div {
+    height: fit-content;
+    background-color: rgb(21, 53, 45);
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    letter-spacing: 0.4rem;
+    padding: 5vw;
+    color:azure;
+    font-size: 250%;
+}
+
+h1 span {
+    letter-spacing: 0;
+    color:rgb(224, 98, 13)
+}
+
+#settings-box {
+    width: 90%;
+    margin-left: 5%;
+    background-color: rgb(65, 100, 91);
+    min-height: 100px;
+    height: fit-content;
+}
+
+/* Simulation Area */
+
+#sim-area {
+    width: 90%;
+    margin-left: 5%;
+    background-color: azure;
+    min-height: 300px;
+    height: 25vw;
+}
+
+#history-box {
+    width: 90%;
+    margin-left: 5%;
+    background-color: rgb(65, 100, 91);
+    height: 50px;
+}

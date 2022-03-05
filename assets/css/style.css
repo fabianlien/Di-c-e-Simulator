@@ -15,19 +15,34 @@ h1 {
     padding: 5vw;
     color:azure;
     font-size: 250%;
+    font-family: 'Lora', serif;
+    font-weight: 250;
 }
 
 h1 span {
     letter-spacing: 0;
-    color:rgb(224, 98, 13)
+    color:rgb(224, 98, 13);
 }
+
+/* Settings Area*/
 
 #settings-box {
     width: 90%;
     margin-left: 5%;
     background-color: rgb(65, 100, 91);
-    min-height: 100px;
     height: fit-content;
+    max-height: 250px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.setting-select {
+    margin: 3%;
+    min-height: 30px;
+    height: 6vw;
+    min-width: fit-content;
+    width: 6vw;
+    border-radius: 8px;
 }
 
 /* Simulation Area */

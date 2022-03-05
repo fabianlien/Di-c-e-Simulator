@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--Google fonts & font awesome-->
+    <script src="https://kit.fontawesome.com/171d053c1a.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Space+Grotesk&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Di(c)e Simulator</title>
 </head>
@@ -15,7 +18,16 @@
     </header>
     <section>
 <!--Settings bar-->
-        <div id="settings-box"></div>
+        <div id="settings-box">
+            <select class="setting-select">
+                <option value="1">1 die</option>
+                <option value="2">2 dice</i></i></option>
+                <option value="3">3 dice</option>
+                <option value="4">4 dice</option>
+                <option value="5">5 dice</option>
+                <option value="6">6 dice</option>
+            </select>
+        </div>
 <!--Simulation Area-->
         <div id="sim-area"></div>
 <!--Previous rolls box-->

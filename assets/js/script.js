@@ -11,19 +11,32 @@ function summonDice(numDice) {
         diceContain.innerHTML += `<span><i class="fa-solid fa-dice-six"></i></span>`;
         rollDice(6);
     }
+    displaySum();
 }
-
-
-/* Event listeners: */
-document.getElementsByClassName("setting-select")[0].addEventListener("change", function() {
-    summonDice(document.getElementsByClassName("setting-select")[0].value);
-})
 
 /**
  * When called, rolls a die.
  */
 function rollDice(sides) {
     let int1 = Math.floor(Math.random() * sides) + 1;
-    alert(int1);
     document.getElementById("sim-area").innerHTML += `<div>${int1}</div>`;
+    
 }
+
+/**
+ * Displays the sum of the currently rolled dice.
+ */
+function displaySum() {
+    document.getElementById("sum-box").innerHTML = ""
+    for (i = 0; i < document.getElementById("sim-area").children.length; i++) {
+        let dieScore = parseInt(document.getElementById("sim-area").children[i].textContent);
+        return dieScore 
+        document.getElementById("sum-box").innerHTML += `${dieScore}`;
+    }
+}
+ 
+/* Event listeners: */
+document.getElementsByClassName("setting-select")[0].addEventListener("change", function() {
+    summonDice(document.getElementsByClassName("setting-select")[0].value);
+})
+

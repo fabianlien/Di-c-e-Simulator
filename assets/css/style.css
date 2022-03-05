@@ -12,7 +12,7 @@ header div {
 h1 {
     text-align: center;
     letter-spacing: 0.4rem;
-    padding: 5vw;
+    padding: 3vw;
     color:azure;
     font-size: 250%;
     font-family: 'Lora', serif;
@@ -55,7 +55,7 @@ h1 span {
     padding: 5%;
     padding-left: 30px;
     color: azure;
-    font-size: x-large;
+    font-size: xx-large;
 }
 
 #setting-dice-container span {
@@ -72,9 +72,24 @@ h1 span {
     height: 25vw;
 }
 
-#history-box {
-    width: 90%;
+#sum-box {
+    position: absolute;
     margin-left: 5%;
+    background-color: rgb(224, 98, 13);
+    color: azure;
+    height: 60px;
+    width: 10%;
+    text-align: center;
+    line-height: 60px;
+    font-size: x-large;
+    border-bottom-left-radius: 6px;
+}
+
+#history-box {
+    position: absolute;
+    width: 80%;
+    margin-left: 15%;
     background-color: rgb(65, 100, 91);
-    height: 50px;
+    height: 60px;
+    border-bottom-right-radius: 6px;
 }

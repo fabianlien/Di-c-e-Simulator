@@ -62,6 +62,21 @@ h1 span {
     padding-right: 5vw;
 }
 
+#caret-container {
+    line-height: 0;
+    height: 50px;
+    margin-top: -31px;
+    color: rgb(224, 98, 13);
+}
+
+#increase-btn {
+    margin-left: 4px;
+}
+
+#decrease-btn {
+    margin-left: 4px;
+}
+
 /* Simulation Area */
 
 #sim-area {

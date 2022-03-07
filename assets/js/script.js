@@ -28,12 +28,23 @@ function dieSides(dieIndex) {
     dieIndex.outerHTML = 
     `<div id="caret-container">
         <div id="increase-btn"><i class="fa-solid fa-caret-up"></i></div>
-        <span id="active-setting-die" class="setting-die">${diceTypes[i]}</span>
+        <span id="active-setting-die" class="setting-die">${diceTypes[4]}</span>
         <div id="decrease-btn"><i class="fa-solid fa-caret-down"></i></div>
     </div>`;
     document.getElementById("increase-btn").addEventListener("click", function () {
-      document.getElementById("active-setting-die").innerHTML = diceTypes[i++];
+        if (i > 17) {
+            alert("You can't handle more sides!")
+        } else {
+            document.getElementById("active-setting-die").innerHTML = diceTypes[++i];
+        }
     })
+    document.getElementById("decrease-btn").addEventListener("click", function () {
+        if (i < 1) {
+            alert("Sorry, a one-sided die is impossible (not to mention useless)!")
+        } else {
+            document.getElementById("active-setting-die").innerHTML = diceTypes[--i];
+        }
+    })   
 }
 
 

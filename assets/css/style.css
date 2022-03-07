@@ -92,4 +92,7 @@ h1 span {
     background-color: rgb(65, 100, 91);
     height: 60px;
     border-bottom-right-radius: 6px;
+    text-indent: 5%;
+    line-height: 60px;
+    font-size: large;
 }

@@ -27,12 +27,12 @@ function rollDice(sides) {
  * Displays the sum of the currently rolled dice.
  */
 function displaySum() {
-    document.getElementById("sum-box").innerHTML = ""
+    let dieScore = 0;
+    document.getElementById("sum-box").innerHTML = "";
     for (i = 0; i < document.getElementById("sim-area").children.length; i++) {
-        let dieScore = parseInt(document.getElementById("sim-area").children[i].textContent);
-        return dieScore 
-        document.getElementById("sum-box").innerHTML += `${dieScore}`;
+        dieScore += parseInt(document.getElementById("sim-area").children[i].textContent);
     }
+    document.getElementById("sum-box").innerHTML = `${dieScore}`;
 }
  
 /* Event listeners: */

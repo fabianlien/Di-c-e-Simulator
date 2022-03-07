@@ -8,11 +8,25 @@ function summonDice(numDice) {
     diceContain.innerHTML = "";
     document.getElementById("sim-area").innerHTML = "";
     for (let i = 0; i < numDice; i++) {
-        diceContain.innerHTML += `<span><i class="fa-solid fa-dice-six"></i></span>`;
+        diceContain.innerHTML += `<span class="setting-die"><i class="fa-solid fa-dice-six"></i></span>`;
         rollDice(6);
     }
+    
+    document.getElementsByClassName("setting-die")[0].addEventListener("click", function() {
+        this.style.color = "orange";
+    })
+    document.getElementById("setting-dice-container").lastChild.addEventListener("click", function() {
+        this.style.color = "orange";
+    })
+
     displaySum();
 }
+
+/** Lets the user select the amount of sides to each die */
+function dieSides() {
+
+}
+
 
 /**
  * When called, rolls a die.
@@ -34,9 +48,22 @@ function displaySum() {
     }
     document.getElementById("sum-box").innerHTML = `${dieScore}`;
 }
+
+
+
+
+
+/** 
+ * Displays previously rolled dice in an array 
+
+function historyBox(latestScore) {
+    let prevScores = [];
+    prevScores.push(latestScore);
+    document.getElementById("history-box").innerHTML = `${prevScores}`;
+}
+*/
  
-/* Event listeners: */
+/* Global Event listeners: */
 document.getElementsByClassName("setting-select")[0].addEventListener("change", function() {
     summonDice(document.getElementsByClassName("setting-select")[0].value);
 })
-

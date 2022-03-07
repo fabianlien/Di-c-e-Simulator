@@ -18,8 +18,6 @@ function summonDice(numDice) {
     document.getElementById("setting-dice-container").lastChild.addEventListener("click", function() {
         dieSides(this);
     })
-
-    displaySum();
 }
 
 /** Lets the user select the amount of sides to each die */
@@ -63,7 +61,7 @@ function rollDice(sides) {
 function displaySum() {
     let dieScore = 0;
     document.getElementById("sum-box").innerHTML = "";
-    for (i = 0; i < document.getElementById("sim-area").children.length; i++) {
+    for (i = 0; i <= document.getElementById("sim-area").children.length; i++) {
         dieScore += parseInt(document.getElementById("sim-area").children[i].textContent);
     }
     document.getElementById("sum-box").innerHTML = `${dieScore}`;

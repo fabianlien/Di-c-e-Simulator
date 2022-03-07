@@ -38,7 +38,7 @@ h1 span {
     border-top-right-radius: 6px;
 }
 
-.setting-select {
+#setting-select {
     position: relative;
     left: -10%;
     margin: 3%;
@@ -60,6 +60,10 @@ h1 span {
 
 #setting-dice-container span {
     padding-right: 5vw;
+}
+
+.setting-die > i > span {
+    display:none;
 }
 
 #caret-container {
@@ -85,6 +89,13 @@ h1 span {
     background-color: azure;
     min-height: 300px;
     height: 25vw;
+}
+
+#roll-btn-wrapper {
+    width: 90%;
+    margin-left: 5%;
+    background-color: azure;
+    text-align: center;
 }
 
 #sum-box {

@@ -39,8 +39,8 @@ h1 span {
 }
 
 #setting-select {
-    position: relative;
-    left: -10%;
+    position: absolute;
+    left: 10%;
     margin: 3%;
     min-height: 30px;
     height: 6vw;
@@ -53,7 +53,7 @@ h1 span {
     display: flex;
     justify-content: center;
     padding: 5%;
-    padding-left: 30px;
+    padding-left: 100px;
     color: azure;
     font-size: xx-large;
 }

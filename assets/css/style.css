@@ -66,6 +66,10 @@ h1 span {
     display:none;
 }
 
+#active-setting-die span {
+    display:none;
+}
+
 #caret-container {
     line-height: 0;
     height: 50px;

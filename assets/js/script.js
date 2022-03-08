@@ -12,13 +12,18 @@ document.addEventListener("DOMContentLoaded", function() {
             diceContain.innerHTML += `<span class="setting-die"><i class="fa-solid fa-dice-six"><span>6</span></i></span>`;
             rollDice(6);
         }
-        
-        document.getElementsByClassName("setting-die")[0].addEventListener("click", function() {
-            dieSides(this);
-        })
-        document.getElementById("setting-dice-container").lastChild.addEventListener("click", function() {
-            dieSides(this);
-        })
+        let elements = document.getElementsByClassName("setting-die");
+        [...elements].forEach(element => element.addEventListener("click", (event) => {
+            let caretContainerExist = document.getElementById("caret-container");
+            if (caretContainerExist) {
+                caretContainerExist.firstChild.remove();
+                caretContainerExist.firstChild.remove();
+                caretContainerExist.lastChild.remove();
+                caretContainerExist.lastChild.remove();
+            } else {
+                dieSides(event.target);
+            }
+        }, {once : true}))
     }
 
     /** Lets the user select the amount of sides to each die */
@@ -27,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
         dieIndex.outerHTML = 
         `<div id="caret-container">
             <div id="increase-btn"><i class="fa-solid fa-caret-up"></i></div>
-            <span id="active-setting-die" class="setting-die">${diceTypes[4]}</span>
+            <span id="active-setting-die">${diceTypes[4]}</span>
             <div id="decrease-btn"><i class="fa-solid fa-caret-down"></i></div>
         </div>`;
         document.getElementById("increase-btn").addEventListener("click", function () {

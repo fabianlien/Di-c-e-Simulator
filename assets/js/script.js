@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    summonDice(4);
+    summonDice(1);
 
     /**
      * Determines the amount dice to summon based on user input and rolls.
@@ -119,8 +119,21 @@ document.addEventListener("DOMContentLoaded", function() {
             simDie[i].addEventListener("click", function() {
                 this.removeAttribute("class");
                 this.classList.add("hold-die");
+                holdDeactivate();
             })
         }
+        
+    }
+
+    function holdDeactivate() {
+        let holdDie = document.getElementsByClassName("hold-die");
+        for (i = 0; i < holdDie.length; i++) {
+            holdDie[i].addEventListener("click", function() {
+                this.removeAttribute("class");
+                this.classList.add("sim-die");
+            })
+        }
+        
     }
 
     /*

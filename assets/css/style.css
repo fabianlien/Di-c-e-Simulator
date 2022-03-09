@@ -34,8 +34,8 @@ h1 span {
     background-color: rgb(65, 100, 91);
     height: fit-content;
     max-height: 250px;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }
 
 #setting-select {
@@ -97,15 +97,33 @@ h1 span {
     justify-content: center;
 }
 
-#sim-area div {
+.sim-die {
     width: 50px;
     height: 50px;
     text-align: center;
     font-size: xx-large;
     line-height: 50px;
-    color: rgb(119, 46, 0);
-    border: 8px solid rgb(119, 46, 0);
+    color: rgb(224, 98, 13);
+    border: 8px solid rgb(224, 98, 13);
     margin: auto;
+    border-radius: 12px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+}
+
+.hold-die {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: xx-large;
+    line-height: 50px;
+    background-color: rgb(224, 98, 13);
+    border: 8px solid rgb(224, 98, 13);
+    color: azure;
+    margin: auto;
+    border-radius: 12px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
 }
 
 #roll-btn-wrapper {
@@ -125,8 +143,9 @@ h1 span {
     width: 10%;
     text-align: center;
     line-height: 60px;
-    font-size: x-large;
-    border-bottom-left-radius: 6px;
+    font-size: xx-large;
+    border-bottom-left-radius: 12px;
+    font-family: 'Space Grotesk', sans-serif;
 }
 
 #history-box {
@@ -135,7 +154,7 @@ h1 span {
     margin-left: 15%;
     background-color: rgb(65, 100, 91);
     height: 60px;
-    border-bottom-right-radius: 6px;
+    border-bottom-right-radius: 12px;
     text-indent: 5%;
     line-height: 60px;
     font-size: large;

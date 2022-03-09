@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    summonDice(1);
 
     /**
      * Determines the amount dice to summon based on user input and rolls.
@@ -12,15 +11,15 @@ document.addEventListener("DOMContentLoaded", function() {
             diceContain.innerHTML += `<span class="setting-die"><i class="fa-solid fa-dice-six"><span>6</span></i></span>`;
             rollDice(6);
         }
+        displaySum();
     }
 
     /**
      * When called, rolls a die based on the number of sides.
      */
     function rollDice(sides) {
-        let int1 = Math.floor(Math.random() * sides) + 1;
-        document.getElementById("sim-area").innerHTML += `<div>${int1}</div>`;
-        displaySum();
+        let int = Math.floor(Math.random() * sides) + 1;
+        document.getElementById("sim-area").innerHTML += `<div>${int}</div>`;
     }
 
     /**
@@ -44,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function() {
         let scoreArray = scoreString.textContent.split(" ");
         scoreArray.unshift(latestScore);
         scoreString.innerHTML = scoreArray;
-        
     }
     
     
@@ -60,5 +58,6 @@ document.addEventListener("DOMContentLoaded", function() {
             let sides = parseInt(document.getElementsByClassName("setting-die")[i].textContent);
             rollDice(sides);
         }
+        displaySum();
     })
 })

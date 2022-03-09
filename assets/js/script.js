@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
      * When called, rolls a die based on the number of sides.
      */
     function rollDice(sides) {
+        //console.log(`sides is: ${sides}`)
         let int = Math.floor(Math.random() * sides) + 1;
         document.getElementById("sim-area").innerHTML += `<div>${int}</div>`;
     }
@@ -30,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("sum-box").innerHTML = "";
         for (i = 0; i < document.getElementById("sim-area").children.length; i++) {
             dieScore += parseInt(document.getElementById("sim-area").children[i].textContent);
+            console.log(`diescore is: ${dieScore}`)
         }
         document.getElementById("sum-box").innerHTML = dieScore;
         historyBox(dieScore);

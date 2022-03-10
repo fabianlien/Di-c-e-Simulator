@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     /** 
      * Displays previously rolled dice in an array 
-    */
+     */
     function historyBox(latestScore) {
         let scoreString = document.getElementById("history-box");
         let scoreArray = scoreString.textContent.split(" ");
@@ -94,47 +94,55 @@ document.addEventListener("DOMContentLoaded", function() {
         scoreString.innerHTML = scoreArray;
     }
     
+    /** 
+     * Allows the user to select which dice to hold on next draw.
+    */
+         function holdListener() {
+            let simDie = document.getElementsByClassName("sim-die");
+            for (i = 0; i < simDie.length; i++) {
+                simDie[i].addEventListener("click", function() {
+                    this.removeAttribute("class");
+                    this.classList.add("hold-die");
+                    holdDeactivate();
+                })
+            }
+            
+        }
     
-    /* Global Event listeners: */
+        function holdDeactivate() {
+            let holdDie = document.getElementsByClassName("hold-die");
+            for (i = 0; i < holdDie.length; i++) {
+                holdDie[i].addEventListener("click", function() {
+                    this.removeAttribute("class");
+                    this.classList.add("sim-die");
+                })
+            }
+            
+        }
+
+    /** 
+     *  Global event listeners: 
+     * */
+    /** Dice quantity setting */
     document.getElementById("setting-select").addEventListener("change", function() {
         summonDice(document.getElementById("setting-select").value);
     })
-
+    
+    /** Roll button */
     document.getElementById("roll-btn").addEventListener("click", function() {
-        document.getElementById("sim-area").innerHTML = "";
-        let dice = document.getElementById("setting-select").value;
-        for (i = 0; i < dice; i++) {
+        let elements = document.getElementsByClassName("sim-die");
+        let newDice = 0;
+        [...elements].forEach(element => (newDice += 1, element.outerHTML = ""));
+
+            //document.getElementById("sim-area").innerHTML = "";
+        for (i = 0; i < newDice; i++) {
             let sides = parseInt(document.getElementsByClassName("setting-die")[i].textContent);
             rollDice(sides);
         }
         displaySum();
     })
 
-    /** 
-     * Allows the user to select which dice to hold on next draw.
-    */
-    function holdListener() {
-        let simDie = document.getElementsByClassName("sim-die");
-        for (i = 0; i < simDie.length; i++) {
-            simDie[i].addEventListener("click", function() {
-                this.removeAttribute("class");
-                this.classList.add("hold-die");
-                holdDeactivate();
-            })
-        }
-        
-    }
 
-    function holdDeactivate() {
-        let holdDie = document.getElementsByClassName("hold-die");
-        for (i = 0; i < holdDie.length; i++) {
-            holdDie[i].addEventListener("click", function() {
-                this.removeAttribute("class");
-                this.classList.add("sim-die");
-            })
-        }
-        
-    }
 
     /*
     document.getElementsByClassName("sim-die").forEach(element => {

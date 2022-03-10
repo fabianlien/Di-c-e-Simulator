@@ -16,20 +16,24 @@ document.addEventListener("DOMContentLoaded", function() {
         displaySum();
     
 
-        /*
-        let elements = document.getElementsByClassName("setting-die");
-        [...elements].forEach(element => element.addEventListener("click", (event) => {
-            let caretContainer = document.getElementById("caret-container");
-            if (event.target.firstChild.hasAttribute("id")) {
-                alert("yes!");
-            } else if(caretContainer) {
-                let active = document.getElementById("active-setting-die").innerHTML;
-                caretContainer.parentNode.innerHTML = active;
-            } else {
-                dieSides(event.target);
-            }
-        }))   */ 
     } 
+
+    /**
+     * Determines the amount of sides of the dice based on user input.
+     */
+    function summonSides(sides) {
+        let sidesHTML = [`<span class="setting-die"><i class="fa-solid fa-circle-half-stroke"></i><span>2</span></i></span>`,
+            `<span class="setting-die"><i class="fa-solid fa-dice-three"><span>3</span></i></span>`,
+            `<span class="setting-die"><i class="fa-solid fa-dice-four"><span>4</span></i></span>`,
+            `<span class="setting-die"><i class="fa-solid fa-dice-six"><span>6</span></i></span>`,
+            `<span class="setting-die"><i class="fa-solid fa-dice-d20"><span>8</span></i>8</span>`,
+            `<span class="setting-die"><i class="fa-solid fa-dice-d20"><span>8</span></i>10</span>`,
+            `<span class="setting-die"><i class="fa-solid fa-dice-d20"><span>8</span></i>12</span>`,
+            `<span class="setting-die"><i class="fa-solid fa-dice-d20"><span>8</span></i>16</span>`,
+            `<span class="setting-die"><i class="fa-solid fa-dice-d20"><span>8</span></i>20</span>`];
+        let settingDice = document.getElementsByClassName("setting-die");
+        [...settingDice].forEach(element => element.outerHTML = sidesHTML[sides]);
+    }
     
 
 
@@ -117,7 +121,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     this.classList.add("sim-die");
                 })
             }
-            
         }
 
     /** 
@@ -127,35 +130,22 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("setting-select").addEventListener("change", function() {
         summonDice(document.getElementById("setting-select").value);
     })
-    
+
+    /** Dice sides setting */
+    document.getElementById("sides-select").addEventListener("change", function() {
+        summonSides(document.getElementById("sides-select").value);
+    })
+
     /** Roll button */
     document.getElementById("roll-btn").addEventListener("click", function() {
         let elements = document.getElementsByClassName("sim-die");
         let newDice = 0;
         [...elements].forEach(element => (newDice += 1, element.outerHTML = ""));
-
-            //document.getElementById("sim-area").innerHTML = "";
         for (i = 0; i < newDice; i++) {
             let sides = parseInt(document.getElementsByClassName("setting-die")[i].textContent);
             rollDice(sides);
         }
         displaySum();
+        holdDeactivate();
     })
-
-
-
-    /*
-    document.getElementsByClassName("sim-die").forEach(element => {
-        element.addEventListener('click', function() {
-          console.log("yup");
-        })
-      })
-    /*let elements = document.getElementsByClassName("sim-die");
-    [...elements].forEach(element => element.addEventListener("click", function() {
-            console.log("blarg");
-        }))
-        /*event.target.style.color = "azure";
-        event.target.style.backgroundColor = "rgb(224, 98, 13)";*/
-    
-
 })

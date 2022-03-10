@@ -1,6 +1,7 @@
 body {
     background-color: rgb(199, 223, 213);
     margin: 0 auto;
+    font-family: 'Lora', serif;
 }
 /* Header */
 header div {
@@ -51,6 +52,22 @@ select {
     left: 12%;
 }
 
+#instructions {
+    position: absolute;
+    right: 5%;
+    margin: 3%;
+    height: 6vw;
+    width: 6vw;
+    border-radius: 8px;
+}
+
+#instructions div {
+    background-color: azure;
+    position: absolute;
+    right: 0;
+    width: 50vw;
+    padding: 8px;
+}
 
 #setting-dice-container {
     display: flex;
@@ -67,25 +84,6 @@ select {
 
 .setting-die > i > span {
     display:none;
-}
-
-#active-setting-die span {
-    display:none;
-}
-
-#caret-container {
-    line-height: 0;
-    height: 50px;
-    margin-top: -31px;
-    color: rgb(224, 98, 13);
-}
-
-#increase-btn {
-    margin-left: 4px;
-}
-
-#decrease-btn {
-    margin-left: 4px;
 }
 
 /* Simulation Area */

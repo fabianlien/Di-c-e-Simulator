@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function() {
     /** Instructions on how to play */
     document.getElementById("instructions").addEventListener("mouseover", function() {
         document.getElementById("instructions").innerHTML += `<div>
-        <strong>How to play:</strong>
+        <h3>How to play:</hr>
         <hr>
         <p>Use the selectors to the left to choose how many dice and how many sides you wish to simulate, respectively.</p>
         <p>Once selected, click the "Roll!" button. The score of each die appears as a number in its center. The sum of the scores is displayed in the bottom left corner (and the sums of previous rolls to the right).</p>

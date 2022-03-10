@@ -44,42 +44,59 @@ select {
     left: 5%;
     margin: 3%;
     height: 6vw;
+    min-height: 60px;
     width: 6vw;
+    min-width: 60px;
     border-radius: 8px;
+    background-color: azure;
+    color:rgb(21, 53, 45);
+    font-family: 'Space Grotesk', sans-serif;
+    padding: auto;
+    outline: none;
 }
 
 #sides-select {
-    left: 12%;
+    left: 15%;
 }
 
 #instructions {
     position: absolute;
     right: 5%;
-    margin: 3%;
-    height: 6vw;
-    width: 6vw;
+    margin: 2%;
+    height: 3vw;
+    width: 3vw;
+    line-height: 3vw;
+    text-align: center;
+    font-family: 'Space Grotesk', sans-serif;
+    border: 3px solid azure;
     border-radius: 8px;
+    color: azure;
 }
 
 #instructions div {
+    margin-top: 2px;
     background-color: azure;
     position: absolute;
     right: 0;
     width: 50vw;
     padding: 8px;
+    color:rgb(21, 53, 45);
+    line-height: 20px;
+    border-radius: 6px;
+    z-index: 1;
 }
 
 #setting-dice-container {
     display: flex;
     justify-content: center;
     padding: 5%;
-    padding-left: 100px;
+    padding-left: 150px;
     color: azure;
     font-size: xx-large;
 }
 
 #setting-dice-container span {
-    padding-right: 5vw;
+    padding-right: 3vw;
 }
 
 .setting-die > i > span {
@@ -132,6 +149,27 @@ select {
     margin-left: 5%;
     background-color: azure;
     text-align: center;
+}
+
+#roll-btn {
+    Height: 6vw;
+    min-height: 40px;
+    width: 18vw;
+    min-width: fit-content;
+    border-radius: 16px;
+    margin-bottom: 10px;
+    font-family: 'Lora', serif;
+    letter-spacing: 3px;
+    font-weight: 600;
+    font-size: x-large;
+    background-color: rgb(149, 180, 173);
+    color:rgb(46, 41, 38)
+}
+
+#roll-btn:hover {
+    background-color: rgb(224, 98, 13);
+    color: azure;
+    text-transform: uppercase;
 }
 
 

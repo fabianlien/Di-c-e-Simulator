@@ -74,7 +74,7 @@ select {
 }
 
 #instructions div {
-    margin-top: 2px;
+    margin-top: 3px;
     background-color: azure;
     position: absolute;
     right: 0;
@@ -92,11 +92,17 @@ select {
     padding: 5%;
     padding-left: 150px;
     color: azure;
-    font-size: xx-large;
+    font-size: large;
 }
 
 #setting-dice-container span {
-    padding-right: 3vw;
+    min-width: 40px;
+    padding-right: 2vw;
+}
+
+#setting-dice-container i {
+    font-size: xx-large;
+    text-align: center;
 }
 
 .setting-die > i > span {
@@ -170,6 +176,7 @@ select {
     background-color: rgb(224, 98, 13);
     color: azure;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 

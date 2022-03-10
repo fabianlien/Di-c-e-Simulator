@@ -38,8 +38,35 @@ document.addEventListener("DOMContentLoaded", function() {
      * When called, rolls a die based on the number of sides.
      */
     function rollDice(sides) {
-        let int = Math.floor(Math.random() * sides) + 1;
-        document.getElementById("sim-area").innerHTML += `<div class="sim-die">${int}</div>`;
+
+
+        let rollInterval = setInterval(rollLoad, 20);
+        function rollLoad() {
+            let settingDiceLength = document.getElementById("setting-dice-container").children.length;
+            let simDiceLength = document.getElementById("sim-area").children.length;
+            if (settingDiceLength > simDiceLength) {
+                let int = Math.floor(Math.random() * sides) + 1;
+                document.getElementById("sim-area").innerHTML += `<div class="sim-die">${int}</div>`;
+            } else {
+                let int = Math.floor(Math.random() * sides) + 1;
+                document.getElementById("sim-area").childNodes[Math.floor(Math.random() * settingDiceLength)].outerHTML = `<div class="sim-die">${int}</div>`;
+            }
+        }
+        setTimeout(ceaseRollDelay, 800)
+            function ceaseRollDelay() {
+                clearInterval(rollInterval);
+        }
+        //setTimeout()
+        //let int = Math.floor(Math.random() * sides) + 1;
+        //document.getElementById("sim-area").innerHTML += `<div class="sim-die">${int}</div>`;
+    }
+
+
+    /**
+     * Animates the dice when rolled.
+     */
+    function rollAnimation() {
+
     }
 
     /**
@@ -132,7 +159,10 @@ document.addEventListener("DOMContentLoaded", function() {
             let sides = parseInt(document.getElementsByClassName("setting-die")[i].textContent);
             rollDice(sides);
         }
-        displaySum();
-        holdDeactivate();
+        setTimeout(delayCall, 810)
+        function delayCall() {
+            displaySum();
+            holdDeactivate();
+        }  
     });
 });

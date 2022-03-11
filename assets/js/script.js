@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
             rollDice(6);
         }
         document.getElementById("sides-select").value = 3;
-        setTimeout(delayCall, 810)
+        setTimeout(delayCall, 1000)
         function delayCall() {
             displaySum();
         }
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
             let nonHoldDie = document.getElementsByClassName("sim-die");
             [...nonHoldDie].forEach(element => element.outerHTML = `<div class="sim-die">${Math.floor(Math.random() * sides) + 1}</div>`);
         }
-        setTimeout(ceaseRollDelay, 800)
+        setTimeout(ceaseRollDelay, 990)
         function ceaseRollDelay() {
             clearInterval(rollInterval);
         }
@@ -147,6 +147,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     /** Roll button */
     document.getElementById("roll-btn").addEventListener("click", function() {
+        document.getElementById("dice-roll-wav").play();
         let elements = document.getElementsByClassName("sim-die");
         let newDice = 0;
         [...elements].forEach(element => (newDice += 1, element.outerHTML = ""));
@@ -154,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function() {
             let sides = parseInt(document.getElementsByClassName("setting-die")[i].textContent);
             rollDice(sides);
         }
-        setTimeout(delayCall, 810)
+        setTimeout(delayCall, 1000)
         function delayCall() {
             displaySum();
             holdDeactivate();
@@ -166,15 +167,16 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("footer").innerHTML += `<div class="footer-box"><span>Di[c]e Simulator</span> was created as a school project and is free to use and distribute. 
         Its primary purpose is to be a handy replacement for actual dice in situations where table surface area may be limited, or simply, if you can't find any dice. Have fun with it!
         For instructions on how to play hover the mouse over/tap the questionmark "?" towards the top right of the window.</div>`;
+        document.addEventListener("mouseout", function() {
+            document.getElementById("footer").innerHTML = `<button id="about">About</button><button id="attribution">Attribution</button>`;
+        })
     });
 
     /** Attribution */
     document.getElementById("attribution").addEventListener("click", function() {
-        document.getElementsByTagName("footer")[0].innerHTML += `<div class="footer-box">Sound File</div>`;
-    });
-
-    /** Footer box remove */
-    document.getElementById("footer").addEventListener("mouseleave", function() {
-        document.getElementById("footer").innerHTML = `<button id="about">About</button><button id="attribution">Attribution</button>`;
+        document.getElementById("footer").innerHTML += `<div class="footer-box">Sound File:<strong>dice_06</strong> by dermotte.<br>https://freesound.org/s/220744/</div>`;
+        document.addEventListener("mouseout", function() {
+            document.getElementById("footer").innerHTML = `<button id="about">About</button><button id="attribution">Attribution</button>`;
+        })
     });
 });

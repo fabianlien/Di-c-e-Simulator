@@ -14,9 +14,6 @@
     Loging different values in different functions would occasionally return "*NaN*" values, but the cause for this was never identified. A simpler solution was implemented which also had the benefit of processing less code. The location from which the function was called had previously been in the "*rollDice() function*". This meant that the function would compute the sum after every die roll and display it. So when the "*rollDice() function*" would be iterated, ultimately only the sum from last iteration is visible to the viewer. Therefore the solution was to move the function call from the *"rollDice()"* and add it to the event listener function to be called after the last "*rollDice()*" iteration instead. (See screenshot below:)  
     ![Example after the fix has been applied. Viewed in Chrome Browser](assets/images/display-score-fix.png)
 
-    
-
-
 
 ## Sources ##
 Troubleshooting and tutorials:  
@@ -25,3 +22,7 @@ https://www.sitepoint.com/community/
 https://www.geeksforgeeks.org/  
 https://www.javascripttutorial.net/  
 https://www.educative.io/edpresso/  
+https://developer.mozilla.org/  
+
+## Media ##
+Dice rolling sound: https://freesound.org/s/220744/  

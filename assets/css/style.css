@@ -3,6 +3,7 @@ body {
     margin: 0 auto;
     font-family: 'Lora', serif;
 }
+
 /* Header */
 header div {
     height: fit-content;
@@ -26,7 +27,6 @@ h1 span {
 }
 
 /* Settings Area*/
-
 #settings-box {
     display: flex;
     justify-content: center;
@@ -110,7 +110,6 @@ select {
 }
 
 /* Simulation Area */
-
 #sim-area {
     width: 90%;
     margin-left: 5%;
@@ -179,7 +178,6 @@ select {
     letter-spacing: 1px;
 }
 
-
 #sum-box {
     position: absolute;
     margin-left: 5%;
@@ -205,4 +203,43 @@ select {
     line-height: 60px;
     font-size: large;
     overflow: hidden;
+}
+
+/* Footer */
+#filler {
+    height: 120px;
+}
+
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    height: 30px;
+    background-color: rgb(21, 53, 45);
+    width: 100%;
+    text-align: center;
+}
+
+#footer button {
+    background-color: rgb(21, 53, 45);
+    line-height: 30px;
+    color: rgb(149, 180, 173);
+    border: none;
+    padding: 0 7%;
+}
+
+#footer button:hover {
+    color: rgb(224, 98, 13);
+}
+
+.footer-box {
+    position: absolute;
+    bottom: 30px;
+    z-index: 3;
+    width: 86%;
+    margin-left: 5%;
+    padding: 2%;
+    text-align: center;
+    background-color: azure;
+    border-top: 6px solid rgb(21, 53, 45);
 }

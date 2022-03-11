@@ -120,6 +120,7 @@ document.addEventListener("DOMContentLoaded", function() {
     /** 
      *  Global event listeners: 
      * */
+
     /** Dice quantity setting */
     document.getElementById("setting-select").addEventListener("change", function() {
         summonDice(document.getElementById("setting-select").value);
@@ -158,5 +159,22 @@ document.addEventListener("DOMContentLoaded", function() {
             displaySum();
             holdDeactivate();
         }  
+    });
+
+    /** About */
+    document.getElementById("about").addEventListener("click", function() {
+        document.getElementById("footer").innerHTML += `<div class="footer-box"><span>Di[c]e Simulator</span> was created as a school project and is free to use and distribute. 
+        Its primary purpose is to be a handy replacement for actual dice in situations where table surface area may be limited, or simply, if you can't find any dice. Have fun with it!
+        For instructions on how to play hover the mouse over/tap the questionmark "?" towards the top right of the window.</div>`;
+    });
+
+    /** Attribution */
+    document.getElementById("attribution").addEventListener("click", function() {
+        document.getElementsByTagName("footer")[0].innerHTML += `<div class="footer-box">Sound File</div>`;
+    });
+
+    /** Footer box remove */
+    document.getElementById("footer").addEventListener("mouseleave", function() {
+        document.getElementById("footer").innerHTML = `<button id="about">About</button><button id="attribution">Attribution</button>`;
     });
 });

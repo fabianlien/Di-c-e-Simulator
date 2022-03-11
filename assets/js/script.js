@@ -35,38 +35,34 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     
     /**
-     * When called, rolls a die based on the number of sides.
+     * When called, rolls the dice repeatedly over interval until cleared (based on the number of sides).
      */
     function rollDice(sides) {
-
-
-        let rollInterval = setInterval(rollLoad, 20);
+        
+        let rollInterval = setInterval(rollLoad, 50);
         function rollLoad() {
-            let settingDiceLength = document.getElementById("setting-dice-container").children.length;
-            let simDiceLength = document.getElementById("sim-area").children.length;
-            if (settingDiceLength > simDiceLength) {
-                let int = Math.floor(Math.random() * sides) + 1;
-                document.getElementById("sim-area").innerHTML += `<div class="sim-die">${int}</div>`;
-            } else {
-                let int = Math.floor(Math.random() * sides) + 1;
-                document.getElementById("sim-area").childNodes[Math.floor(Math.random() * settingDiceLength)].outerHTML = `<div class="sim-die">${int}</div>`;
-            }
+            let int = Math.floor(Math.random() * sides) + 1;
+            let settingDice = document.getElementById("setting-dice-container").children;
+            let simDice = document.getElementById("sim-area").children;
+            document.getElementById("sim-area").innerHTML += `<div class="sim-die">${int}</div>`;
+            
+            /*
+            //if ([...simDice].forEach(element => element.classList.contains("sim-die"))) {
+                if (settingDice.length > simDice.length) {
+                    document.getElementById("sim-area").innerHTML += `<div class="sim-die">${int}</div>`;
+                } else if([...simDice].forEach(element => element.classList.contains("sim-die"))) {
+                    document.getElementById("sim-area").childNodes[Math.floor(Math.random() * settingDice.length - [...simDice].length)].outerHTML = `<div class="sim-die">${int}</div>`;
+                } 
+            [...simDice].forEach(element => element.classList.contains("sim-die"), function() {
+                element.target.outerHTML = `<div class="sim-die">${int}</div>`;
+            })
+            //}*/
+
         }
         setTimeout(ceaseRollDelay, 800)
             function ceaseRollDelay() {
                 clearInterval(rollInterval);
         }
-        //setTimeout()
-        //let int = Math.floor(Math.random() * sides) + 1;
-        //document.getElementById("sim-area").innerHTML += `<div class="sim-die">${int}</div>`;
-    }
-
-
-    /**
-     * Animates the dice when rolled.
-     */
-    function rollAnimation() {
-
     }
 
     /**
@@ -148,7 +144,6 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("instructions").addEventListener("mouseout", function() {
         document.getElementById("instructions").innerHTML = `?`;
     });
-    
 
     /** Roll button */
     document.getElementById("roll-btn").addEventListener("click", function() {

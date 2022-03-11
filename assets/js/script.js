@@ -13,8 +13,11 @@ document.addEventListener("DOMContentLoaded", function() {
             diceContain.innerHTML += `<span class="setting-die"><i class="fa-solid fa-dice-six"><span>6</span></i></span>`;
             rollDice(6);
         }
-        displaySum();
         document.getElementById("sides-select").value = 3;
+        setTimeout(delayCall, 810)
+        function delayCall() {
+            displaySum();
+        }
     } 
 
     /**
@@ -35,33 +38,30 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     
     /**
-     * When called, rolls the dice repeatedly over interval until cleared (based on the number of sides).
+     * When called, rolls the dice.
      */
     function rollDice(sides) {
-         
+        let int = Math.floor(Math.random() * sides) + 1;
+        let settingDice = document.getElementById("setting-dice-container").children;
+        let simDice = document.getElementById("sim-area").children;
+        if (settingDice.length > simDice.length) {
+            document.getElementById("sim-area").innerHTML += `<div class="sim-die">${int}</div>`;
+        } 
+        psuedoRoll(sides);
+    }
+
+    /**
+     * Call after dice are rolled. Rolls the dice repeatedly over .05 second intervals until cleared (based on the number of sides).
+     */
+    function psuedoRoll(sides) {
         let rollInterval = setInterval(rollLoad, 50);
         function rollLoad() {
-            let int = Math.floor(Math.random() * sides) + 1;
-            let settingDice = document.getElementById("setting-dice-container").children;
-            let simDice = document.getElementById("sim-area").children;
-            document.getElementById("sim-area").innerHTML += `<div class="sim-die">${int}</div>`;
-            
-            /*
-            //if ([...simDice].forEach(element => element.classList.contains("sim-die"))) {
-                if (settingDice.length > simDice.length) {
-                    document.getElementById("sim-area").innerHTML += `<div class="sim-die">${int}</div>`;
-                } else if([...simDice].forEach(element => element.classList.contains("sim-die"))) {
-                    document.getElementById("sim-area").childNodes[Math.floor(Math.random() * settingDice.length - [...simDice].length)].outerHTML = `<div class="sim-die">${int}</div>`;
-                } 
-            [...simDice].forEach(element => element.classList.contains("sim-die"), function() {
-                element.target.outerHTML = `<div class="sim-die">${int}</div>`;
-            })
-            //}*/
-
+            let nonHoldDie = document.getElementsByClassName("sim-die");
+            [...nonHoldDie].forEach(element => element.outerHTML = `<div class="sim-die">${Math.floor(Math.random() * sides) + 1}</div>`);
         }
         setTimeout(ceaseRollDelay, 800)
-            function ceaseRollDelay() {
-                clearInterval(rollInterval);
+        function ceaseRollDelay() {
+            clearInterval(rollInterval);
         }
     }
 
@@ -107,7 +107,6 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             
         }
-    
         function holdDeactivate() {
             let holdDie = document.getElementsByClassName("hold-die");
             for (i = 0; i < holdDie.length; i++) {

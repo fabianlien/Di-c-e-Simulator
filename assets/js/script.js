@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
      * When called, rolls the dice repeatedly over interval until cleared (based on the number of sides).
      */
     function rollDice(sides) {
-        
+         
         let rollInterval = setInterval(rollLoad, 50);
         function rollLoad() {
             let int = Math.floor(Math.random() * sides) + 1;

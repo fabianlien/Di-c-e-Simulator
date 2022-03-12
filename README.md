@@ -6,7 +6,8 @@ The title of this website is pretty self-explanatory (which is an important poin
 
 All in all, this is your trusty one-size-fits-all digital dice companion. Ideal for when you are lacking horisontal surface area, when you have misplaced your physical dice, or simply for the sake of time efficiency!
 
-
+<hr>
+<br>
 ## Existing Features
 
 * ### **Title banner**
@@ -31,20 +32,29 @@ All in all, this is your trusty one-size-fits-all digital dice companion. Ideal 
 * ### **Footer**
   The website has a small footer containing two "<button>Buttons</button>". When clicked these provide clarity via pop-up windows containing text about the purpose of the website and a link to the CC license .wav file (used for the roll sound), respectively. Similarly to the list of previous scores mentioned in the previous feature, the color and text are quite small in order to not clutter the window with unnecessary text.
   ![screenshot of the footers two clickable buttons](assets/images/footer.png)
+<hr>
+<br>
 
+## Troubleshooting and Debugging
 
-## Troubleshooting and Debugging ##
-- **displaySum() function bug:**  
-    Whenever the dice where rolled via the "click" event listener for the "Roll!" button, the amount of dice displayed in the simulator area would not correspond to the amount of dice selected in the "settings" area. In fact, for any amount of dice greater than 1, there would be exactly 1 fewer dice visible in the simulator area. (see screenshot below:)  
-    ![Example of aforementioned bug. Viewed in Chrome browser](assets/images/display-score-bug.png)
-    The amount of dice rolled in the above screenshot should be 6. Though the simulation area only displays 5.  
+**displaySum() function bug:**  
+Whenever the dice where rolled via the "click" event listener for the "Roll!" button, the amount of dice displayed in the simulator area would not correspond to the amount of dice selected in the "settings" area. In fact, for any amount of dice greater than 1, there would be exactly 1 fewer dice visible in the simulator area. (see screenshot below:)  
+![Example of aforementioned bug. Viewed in Chrome browser](assets/images/display-score-bug.png)
+The amount of dice rolled in the above screenshot should be 6. Though the simulation area only displays 5.  
     
-    Initial troubleshooting using the dev tools console found that in the a "*for loop array*" in the JavaScript function responsible for displaying the diceit was always the object with an index of [1] that was missing.  
-    After running through the code and using the process of elimination, it was deduced that the error was seemingly occuring in the displaySum() function.
+Initial troubleshooting using the dev tools console found that in the a "*for loop array*" in the JavaScript function responsible for displaying the diceit was always the object with an index of [1] that was missing.  
+After running through the code and using the process of elimination, it was deduced that the error was seemingly occuring in the displaySum() function.
     
-    **Fix:**  
-    Loging different values in different functions would occasionally return "*NaN*" values, but the cause for this was never identified. A simpler solution was implemented which also had the benefit of processing less code. The location from which the function was called had previously been in the "*rollDice() function*". This meant that the function would compute the sum after every die roll and display it. So when the "*rollDice() function*" would be iterated, ultimately only the sum from last iteration is visible to the viewer. Therefore the solution was to move the function call from the *"rollDice()"* and add it to the event listener function to be called after the last "*rollDice()*" iteration instead. (See screenshot below:)  
-    ![Example after the fix has been applied. Viewed in Chrome Browser](assets/images/display-score-fix.png)
+**Fix:**  
+Loging different values in different functions would occasionally return "*NaN*" values, but the cause for this was never identified. A simpler solution was implemented which also had the benefit of processing less code. The location from which the function was called had previously been in the "*rollDice() function*". This meant that the function would compute the sum after every die roll and display it. So when the "*rollDice() function*" would be iterated, ultimately only the sum from last iteration is visible to the viewer. Therefore the solution was to move the function call from the *"rollDice()"* and add it to the event listener function to be called after the last "*rollDice()*" iteration instead. (See screenshot below:)  
+![Example after the fix has been applied. Viewed in Chrome Browser](assets/images/display-score-fix.png)
+
+**Event listener repitition bug:**
+An unrseolved issue is the 
+
+<hr>
+<br>
+
 
 
 ## Testing
@@ -55,7 +65,8 @@ No errors were returned when passing through the official W3C validator.
 No errors were returned when passing through the official (Jigsaw) validator.
 **JavaScript:**
 No errors were identified by JSHint.
-
+<hr>
+<br>
 
 ## Deployment
 Initial deployment occured via [GitHub Pages](https://pages.github.com/).  
@@ -93,7 +104,8 @@ By forking the GitHub Repository we make a copy of the original repository on ou
 `> remote: Compressing objects: 100% (8/8), done.`  
 `> remove: Total 10 (delta 1), reused 10 (delta 1)`  
 `> Unpacking objects: 100% (10/10), done.`
-
+<hr>
+<br>
 
 ## Credits ##
 Troubleshooting and tutorials:  

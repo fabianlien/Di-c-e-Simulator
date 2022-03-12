@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    summonDice(1);
+    document.getElementById("sim-area").innerHTML = `<div class="sim-die">${parseInt(Math.floor(Math.random() * 6) + 1)}</div>`;
+    psuedoRoll(6);
 
     /**
      * Determines the amount dice to summon based on user input and rolls.
@@ -87,10 +88,6 @@ document.addEventListener("DOMContentLoaded", function() {
         let scoreString = document.getElementById("history-box");
         let scoreArray = scoreString.textContent.split(" ");
         scoreArray.unshift(latestScore);
-        //let testArray = ["0", "4"]
-        //testArray += "yes";
-        //testArray.forEach(index => index += "yes");
-        //console.log(testArray);
         scoreString.innerHTML = scoreArray;
     }
     
@@ -187,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     /** Attribution */
     document.getElementById("attribution").addEventListener("click", function() {
-        document.getElementById("footer").innerHTML += `<div class="footer-box">Sound File:<strong>dice_06</strong> by dermotte.<br>https://freesound.org/s/220744/</div>`;
+        document.getElementById("footer").innerHTML += `<div class="footer-box">Sound File:<strong>dice_06</strong> by dermotte.<br>https://freesound.org/s/220744/<hr>Dice Image from<br>https://flyclipart.com/tyi-expected-number-of-dice-throws-combinatorics-and-more-dice-png-700628</div>`;
         document.addEventListener("mouseout", function() {
             document.getElementById("footer").innerHTML = `<button id="about">About</button><button id="attribution">Attribution</button>`;
         })

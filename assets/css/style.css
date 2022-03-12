@@ -59,7 +59,7 @@ select {
     left: 15%;
 }
 
-#instructions {
+.icon-btn {
     position: absolute;
     right: 5%;
     margin: 2%;
@@ -71,6 +71,15 @@ select {
     border: 3px solid azure;
     border-radius: 8px;
     color: azure;
+}
+
+#sound-btn {
+    margin-top: 8%;
+}
+
+#mute-btn {
+    margin-top: 8%;
+    display: none;
 }
 
 #instructions div {

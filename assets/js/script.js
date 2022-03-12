@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
             diceContain.innerHTML += `<span class="setting-die"><i class="fa-solid fa-dice-six"><span>6</span></i></span>`;
             rollDice(6);
         }
+        document.getElementById("dice-roll-wav").play();
         document.getElementById("sides-select").value = 3;
         setTimeout(delayCall, 1000)
         function delayCall() {
@@ -143,6 +144,18 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     document.getElementById("instructions").addEventListener("mouseout", function() {
         document.getElementById("instructions").innerHTML = `?`;
+    });
+
+    /** Sound button */
+    document.getElementById("sound-btn").addEventListener("click", function() {
+        document.querySelectorAll("audio")[0].muted = true;
+        this.style.display = "none"
+        document.getElementById("mute-btn").style.display = "block"
+    });
+    document.getElementById("mute-btn").addEventListener("click", function() {
+        document.querySelectorAll("audio")[0].muted = false;
+        this.style.display = "none"
+        document.getElementById("sound-btn").style.display = "block"
     });
 
     /** Roll button */

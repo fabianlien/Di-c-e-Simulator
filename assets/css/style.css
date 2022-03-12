@@ -16,7 +16,7 @@ h1 {
     letter-spacing: 0.4rem;
     padding: 3vw;
     color:azure;
-    font-size: 250%;
+    font-size: 280%;
     font-family: 'Lora', serif;
     font-weight: 250;
 }
@@ -51,7 +51,6 @@ select {
     font-family: 'Space Grotesk', sans-serif;
     text-align: center;
     font-size: large;
-    padding: auto;
     outline: none;
 }
 
@@ -130,11 +129,11 @@ select {
 }
 
 .sim-die {
-    width: 8vw;
-    height: 8vw;
+    width: 80px;
+    height: 80px;
     text-align: center;
-    font-size: 6vw;
-    line-height: 8vw;
+    font-size: xxx-large;
+    line-height: 80px;
     color: rgb(224, 98, 13);
     border: 8px solid rgb(224, 98, 13);
     margin: auto 30px;
@@ -144,11 +143,11 @@ select {
 }
 
 .hold-die {
-    width: 8vw;
-    height: 8vw;
+    width: 80px;
+    height: 80px;
     text-align: center;
-    font-size: 6vw;
-    line-height: 8vw;
+    font-size: xxx-large;
+    line-height: 80px;
     background-color: rgb(224, 98, 13);
     border: 8px solid rgb(224, 98, 13);
     color: azure;
@@ -211,7 +210,7 @@ select {
     border-bottom-right-radius: 12px;
     text-indent: 5%;
     line-height: 80px;
-    font-size: large;
+    font-size: x-large;
     overflow: hidden;
 }
 
@@ -365,6 +364,7 @@ select {
         margin-left: auto;
         margin-right: 5%;
         text-indent: 40px;
+        font-size: large;
     }
 }
 
@@ -373,6 +373,7 @@ select {
     
     h1 {
         margin-top: 0;
+        font-size: 9vw;
     }
 
     #settings-box {
@@ -484,26 +485,36 @@ select {
         margin-right: 5%;
         text-indent: 70px;
         line-height: 110px;
+        font-size: large;
     }
 }
 
 /* for large tablets and small laptops */
 @media screen and (min-width: 769px) and (max-width: 1024px){
     
+    h1 {
+        font-size: 320%;
+    }
+
     select {
-    font-size: large;
-    margin: 2%;
-    height: 7vw;
-    width: 11vw;
+        font-size: large;
+        margin: 2%;
+        height: 7vw;
+        width: 11vw;
     }
 
     #sides-select {
         left: 18%;
     }
 
+    #setting-dice-container {
+        padding-left: 200px;
+    }
+
     #sound-btn {
         margin-top: 7%;
     }
+
     
     #mute-btn {
         margin-top: 7%;
@@ -516,12 +527,7 @@ select {
         text-align: center;
         font-size: 6vw;
         line-height: 8vw;
-        color: rgb(224, 98, 13);
-        border: 8px solid rgb(224, 98, 13);
         margin: auto 30px;
-        border-radius: 20px;
-        font-family: 'Space Grotesk', sans-serif;
-        font-weight: 800;
     }
     
     .hold-die {
@@ -530,17 +536,98 @@ select {
         text-align: center;
         font-size: 6vw;
         line-height: 8vw;
-        background-color: rgb(224, 98, 13);
-        border: 8px solid rgb(224, 98, 13);
         color: azure;
         margin: auto 15px;
-        border-radius: 20px;
-        font-family: 'Space Grotesk', sans-serif;
-        font-weight: 800;
     }
 }
 
-/* For very large screens */
+/* For large screens */
 @media screen and (min-width: 1441px) {
     
+    header div {
+        margin-top: 50px;
+    }
+    
+    #settings-box {
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    #setting-dice-container {
+        padding-left: 300px;
+    }
+
+    #setting-dice-container i {
+        font-size: 250%;
+    }
+
+    select {
+        position: absolute;
+        left: 15%;
+        margin: 2%;
+        height: 80px;
+        width: 8vw;
+        border-radius: 8px;
+        background-color: azure;
+        color:rgb(21, 53, 45);
+    }
+    
+    #sides-select {
+        left: 25%;
+    }
+
+    .icon-btn {
+        position: absolute;
+        right: 15%;
+        margin: 10px;
+        height: 25px;
+        width: 25px;
+        line-height: 25px;
+    }
+    
+    #sound-btn {
+        margin-top: 10px;
+        margin-right: 50px;
+    }
+    
+    #mute-btn {
+        margin-top: 10px;
+        margin-right: 50px;
+    }
+
+    #instructions div {
+        width: 30%;
+    }
+
+    #sim-area {
+        width: 70%;
+        height: 35vh;
+        margin-left: 15%;
+    }
+
+    #roll-btn-wrapper {
+        width: 70%;
+        margin-left: 15%;
+    }
+    
+    #roll-btn {
+        Height: 80px;
+        width: 160px;
+    }
+    
+    #sum-box {
+        position: absolute;
+        margin-left: 15%;
+    }
+    
+    #history-box {
+        position: absolute;
+        width: 60%;
+        margin-left: 25%;
+    }
+    
+    /* Footer */
+    #filler {
+        height: 120px;
+    }
 }

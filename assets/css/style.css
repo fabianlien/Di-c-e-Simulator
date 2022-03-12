@@ -44,9 +44,7 @@ select {
     left: 5%;
     margin: 3%;
     height: 6vw;
-    min-height: 60px;
     width: 6vw;
-    min-width: 60px;
     border-radius: 8px;
     background-color: azure;
     color:rgb(21, 53, 45);
@@ -105,7 +103,6 @@ select {
 }
 
 #setting-dice-container span {
-    min-width: 40px;
     padding-right: 2vw;
 }
 
@@ -123,36 +120,37 @@ select {
     width: 90%;
     margin-left: 5%;
     background-color: azure;
-    min-height: 300px;
+    min-height: 250px;
     height: 25vw;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .sim-die {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     text-align: center;
     font-size: xx-large;
-    line-height: 50px;
+    line-height: 60px;
     color: rgb(224, 98, 13);
     border: 8px solid rgb(224, 98, 13);
-    margin: auto;
+    margin: auto 5%;
     border-radius: 12px;
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 800;
 }
 
 .hold-die {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     text-align: center;
     font-size: xx-large;
-    line-height: 50px;
+    line-height: 60px;
     background-color: rgb(224, 98, 13);
     border: 8px solid rgb(224, 98, 13);
     color: azure;
-    margin: auto;
+    margin: auto 2%;
     border-radius: 12px;
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 800;
@@ -196,7 +194,7 @@ select {
     width: 10%;
     text-align: center;
     line-height: 60px;
-    font-size: xx-large;
+    font-size: xxx-large;
     border-bottom-left-radius: 12px;
     font-family: 'Space Grotesk', sans-serif;
 }
@@ -206,6 +204,7 @@ select {
     width: 80%;
     margin-left: 15%;
     background-color: rgb(65, 100, 91);
+    color: rgb(149, 180, 173);
     height: 60px;
     border-bottom-right-radius: 12px;
     text-indent: 5%;
@@ -222,6 +221,7 @@ select {
 
 #footer {
     position: fixed;
+    z-index: 3;
     bottom: 0;
     height: 30px;
     background-color: rgb(21, 53, 45);
@@ -251,4 +251,114 @@ select {
     text-align: center;
     background-color: azure;
     border-top: 6px solid rgb(21, 53, 45);
+}
+
+/* Media Queries */
+@media screen and (max-width: 480px) {
+   
+    #settings-box {
+        height: 90px;
+    }
+    
+    select {
+        position: absolute;
+        left: 5%;
+        margin: 2px;
+        height: 42px;
+        width: 80px;
+        border-radius: 0;
+        text-align: center;
+        font-size: 100%;
+    }
+
+    #sides-select {
+        margin-top: 46px;
+        left: 5%;
+    }
+
+    #setting-select {
+        border-top-left-radius: 10px;
+    }
+    #setting-dice-container {
+        padding: 30px;
+        padding-left: 80px;
+    }
+    #setting-dice-container span {
+        max-width: 40px;
+        padding-right: 2%;
+        text-align: center;
+    }
+    .icon-btn {
+        position: absolute;
+        margin: 0;
+        margin: 3px;
+        height: 30px;
+        width: 30px;
+        border-radius: 10px;
+        line-height: 30px;
+        font-size: x-large;
+    }
+    
+    #sound-btn {
+        margin-top: 51px;
+    }
+    
+    #mute-btn {
+        margin-top: 51px;
+        display: none;
+    }
+    
+    #instructions div {
+        font-size: medium;
+        width: 80vw;
+
+    }
+
+    .sim-die {
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        font-size: xxx-large;
+        line-height: 50px;
+        margin: auto 20px;
+    }
+
+    .hold-die {
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        font-size: xxx-large;
+        line-height: 50px;
+        margin: auto 10px;
+    }
+
+    #roll-btn {
+        Height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        margin-bottom: -16px;
+        position: relative;
+        z-index: 3;
+    }
+
+    #sum-box {
+        z-index: 2;
+        height: 60px;
+        width: 60px;
+        font-size: xx-large;
+    }
+
+    #history-box {
+        right: 0;
+        width: 80%;
+        margin-left: auto;
+        margin-right: 5%;
+        text-indent: 40px;
+    }
+
+    h1 {
+        margin-top: 0;
+        padding: 1vw 4vw;
+        font-size: 300%;
+    }
 }

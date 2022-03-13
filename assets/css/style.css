@@ -26,6 +26,24 @@ h1 span {
     color:rgb(224, 98, 13);
 }
 
+.border-img {
+    position: absolute;
+    opacity: 0.3;
+    transform: rotate(180deg) scale(0.25);
+    display: none;
+}
+
+#right-border-img {
+    top: -70px;
+    right: -290px;
+}
+
+#left-border-img {
+    transform: scale(0.25) scaleY(-1);
+    top: -70px;
+    left: -290px;
+}
+
 /* Settings Area*/
 #settings-box {
     display: flex;
@@ -547,6 +565,10 @@ select {
     header div {
         margin-top: 50px;
     }
+
+    .border-img {
+        display: unset;
+    }
     
     #settings-box {
         width: 70%;
@@ -624,10 +646,5 @@ select {
         position: absolute;
         width: 60%;
         margin-left: 25%;
-    }
-    
-    /* Footer */
-    #filler {
-        height: 120px;
     }
 }

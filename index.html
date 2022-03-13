@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--Google fonts & font awesome-->
+    <meta name="description" content="A intuitive simulator of up to 6 dice with up to 20 sides.">
+    <meta name="keywords" content="dice, die, simulator, roll, yatzee, sim, octahedron, dodecahedron, icosahedron">
+<!--Google fonts, font awesome and favicon-->
     <script src="https://kit.fontawesome.com/171d053c1a.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Space+Grotesk&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <title>Di(c)e Simulator</title>
 </head>
 <body>
+<!-- Header-->
     <header>
         <div>
             <h1>Di<span>[c</span>]e Simulator</h1>
+            <img src="assets/images/decorative-frame.png" alt="decorative frame" class="border-img" id="left-border-img">
+            <img src="assets/images/decorative-frame.png" alt="decorative frame" class="border-img" id="right-border-img">
         </div>
     </header>
     <section>
@@ -51,11 +57,12 @@
         <div id="roll-btn-wrapper">
             <button id="roll-btn"><audio src="assets/audio/220744__dermotte__dice-06.wav" id="dice-roll-wav"></audio>Roll!</button>
         </div>
-<!--score boxes-->
+<!--Score boxes-->
         <span id="sum-box">0</span>
         <span id="history-box">0</span>
         <div id="filler"></div>
     </section>
+<!--Footer-->
     <footer>
         <div id="footer">
             <button id="about">About</button>

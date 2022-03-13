@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         document.getElementById("dice-roll-wav").play();
         document.getElementById("sides-select").value = 3;
-        setTimeout(delayCall, 1000)
+        setTimeout(delayCall, 1000);
         function delayCall() {
             displaySum();
         }
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
             let nonHoldDie = document.getElementsByClassName("sim-die");
             [...nonHoldDie].forEach(element => element.outerHTML = `<div class="sim-die">${Math.floor(Math.random() * sides) + 1}</div>`);
         }
-        setTimeout(ceaseRollDelay, 990)
+        setTimeout(ceaseRollDelay, 990);
         function ceaseRollDelay() {
             clearInterval(rollInterval);
         }
@@ -94,31 +94,30 @@ document.addEventListener("DOMContentLoaded", function() {
     /** 
      * Allows the user to select which dice to hold on next draw.
     */
-         function holdListener() {
-            let simDie = document.getElementsByClassName("sim-die");
-            for (i = 0; i < simDie.length; i++) {
-                simDie[i].addEventListener("click", function() {
-                    this.removeAttribute("class");
-                    this.classList.add("hold-die");
-                    holdDeactivate();
-                });
-            }
+    function holdListener() {
+        let simDie = document.getElementsByClassName("sim-die");
+        for (i = 0; i < simDie.length; i++) {
+            simDie[i].addEventListener("click", function() {
+                this.removeAttribute("class");
+                this.classList.add("hold-die");
+                holdDeactivate();
+            });
+        }
             
+    }
+    function holdDeactivate() {
+        let holdDie = document.getElementsByClassName("hold-die");
+        for (i = 0; i < holdDie.length; i++) {
+            holdDie[i].addEventListener("click", function() {
+                this.removeAttribute("class");
+                this.classList.add("sim-die");
+            });
         }
-        function holdDeactivate() {
-            let holdDie = document.getElementsByClassName("hold-die");
-            for (i = 0; i < holdDie.length; i++) {
-                holdDie[i].addEventListener("click", function() {
-                    this.removeAttribute("class");
-                    this.classList.add("sim-die");
-                });
-            }
-        }
+    }
 
-    /** 
-     *  Global event listeners: 
-     * */
-
+/** 
+ *  Global event listeners: 
+ * */
     /** Dice quantity setting */
     document.getElementById("setting-select").addEventListener("change", function() {
         summonDice(document.getElementById("setting-select").value);
@@ -137,7 +136,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <p>Use the selectors to the left to choose how many dice and how many sides you wish to simulate, respectively.</p>
         <p>Once selected, click the "Roll!" button. The score of each die appears as a number in its center. The sum of the scores is displayed in the bottom left corner (and the sums of previous rolls to the right).</p>
         <p>"Hold" a die to stop it from rolling by clicking on it. The die will change to color to indicate its being "held". To "unhold", click the die again.</p>
-        </div>`
+        </div>`;
     });
     document.getElementById("instructions").addEventListener("mouseout", function() {
         document.getElementById("instructions").innerHTML = `?`;
@@ -146,13 +145,13 @@ document.addEventListener("DOMContentLoaded", function() {
     /** Sound button */
     document.getElementById("sound-btn").addEventListener("click", function() {
         document.querySelectorAll("audio")[0].muted = true;
-        this.style.display = "none"
-        document.getElementById("mute-btn").style.display = "block"
+        this.style.display = "none";
+        document.getElementById("mute-btn").style.display = "block";
     });
     document.getElementById("mute-btn").addEventListener("click", function() {
         document.querySelectorAll("audio")[0].muted = false;
-        this.style.display = "none"
-        document.getElementById("sound-btn").style.display = "block"
+        this.style.display = "none";
+        document.getElementById("sound-btn").style.display = "block";
     });
 
     /** Roll button */
@@ -165,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function() {
             let sides = parseInt(document.getElementsByClassName("setting-die")[i].textContent);
             rollDice(sides);
         }
-        setTimeout(delayCall, 1000)
+        setTimeout(delayCall, 1000);
         function delayCall() {
             displaySum();
             holdDeactivate();
@@ -179,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function() {
         For instructions on how to play hover the mouse over/tap the questionmark "?" towards the top right of the window.</div>`;
         document.addEventListener("mouseout", function() {
             document.getElementById("footer").innerHTML = `<button id="about">About</button><button id="attribution">Attribution</button>`;
-        })
+        });
     });
 
     /** Attribution */
@@ -187,6 +186,6 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("footer").innerHTML += `<div class="footer-box">Sound File:<strong>dice_06</strong> by dermotte.<br>https://freesound.org/s/220744/<hr>Dice Image from<br>https://flyclipart.com/tyi-expected-number-of-dice-throws-combinatorics-and-more-dice-png-700628</div>`;
         document.addEventListener("mouseout", function() {
             document.getElementById("footer").innerHTML = `<button id="about">About</button><button id="attribution">Attribution</button>`;
-        })
+        });
     });
 });
